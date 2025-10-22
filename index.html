@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achini Subasinghe - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing {
+            border-right: 2px solid #667eea;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: transparent;
+            }
+
+            51%,
+            100% {
+                border-color: #667eea;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #1e293b, #334155);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1
+                    class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Achini Subasinghe
+                </h1>
+
+                <!-- Navigation Links -->
+                <div id="nav-links" class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-slate-900 relative overflow-hidden">
+        <!-- Floating shapes background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 w-24 h-24 bg-purple-500 rounded-full floating"></div>
+            <div class="absolute top-1/3 right-20 w-20 h-20 bg-pink-500 rounded-full floating"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-blue-500 rounded-full floating"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-12 h-12 bg-yellow-500 rounded-full floating"
+                style="animation-delay: 0.5s;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Achini
+                        Subasinghe</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl mb-6 font-medium text-gray-300">Full Stack Developer</h2>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-400 leading-relaxed">
+                    I build modern, performant web applications with a passion for clean code and elegant user
+                    experiences.
+                    Skilled in Java, Spring Boot, and modern frontend frameworks.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#projects"
+                        class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="./Assests/Achini Subasinghe CV (3).pdf" download
+                        class="inline-block border-2 border-purple-500 px-8 py-3 rounded-full font-semibold text-purple-400 hover:bg-purple-500 hover:text-white transition-all transform hover:scale-105">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <!-- <section id="about" class="py-20 bg-black"> -->
+    <section id="about" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2
+                    class="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    About Me
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div
+                            class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                            <img src="Assests/final.jpg"
+                                class="w-80 h-80 mx-auto flex items-center justify-center rounded-full">
+
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Software Engineer | Full-Stack Developer | Mobile App
+                            Developer</h3>
+                        <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                            I'm a passionate full-stack developer with expertise in both frontend and backend
+                            technologies.
+                            My journey in programming has led me to master various technologies including Java, Spring
+                            Boot,
+                            HTML, CSS, JavaScript, and JavaEE.
+                        </p>
+                        <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                            I love turning complex problems into simple, beautiful, and intuitive solutions.
+                            When I'm not coding, you'll find me exploring new technologies and building exciting
+                            projects.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/AchiniSubasinghe" target="_blank" rel="noopener noreferrer"
+                                class="text-purple-400 hover:text-purple-300 text-2xl transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/achini-subasinghe-a7642b2aa" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-purple-400 hover:text-purple-300 text-2xl transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+
+                            <!-- <a href="#" class="text-purple-400 hover:text-purple-300 text-2xl transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2
+                    class="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Skills & Technologies
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Frontend -->
+                    <div class="glass rounded-2xl p-6 skill-glow">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-code text-4xl text-purple-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold">Frontend</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">HTML5</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">CSS3</span>
+                            <span
+                                class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">JavaScript</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">React</span>
+                            <span
+                                class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Tailwind</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="glass rounded-2xl p-6 skill-glow">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-server text-4xl text-green-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold">Backend</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Java</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Spring
+                                Boot</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">JavaEE</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">REST
+                                API</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">MySQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="glass rounded-2xl p-6 skill-glow">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-tools text-4xl text-yellow-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold">Tools & Others</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Git</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Docker</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">VS
+                                Code</span>
+                            <span
+                                class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">IntelliJ</span>
+                            <span
+                                class="tech-badge px-3 py-1 rounded-full text-sm font-medium text-white">Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2
+                    class="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Featured Projects
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">
+                            Full-stack e-commerce solution built with Spring Boot backend and React frontend.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 px-2 py-1 rounded text-xs">Spring Boot</span>
+                            <span class="bg-blue-600 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-green-600 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-tasks text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Task Management System</h3>
+                        <p class="text-gray-400 mb-4">
+                            Collaborative task management app with real-time updates and team collaboration features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-600 px-2 py-1 rounded text-xs">Java</span>
+                            <span class="bg-yellow-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-red-600 px-2 py-1 rounded text-xs">HTML/CSS</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-green-500 to-teal-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Analytics Dashboard</h3>
+                        <p class="text-gray-400 mb-4">
+                            Interactive dashboard for data visualization and business intelligence insights.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-600 px-2 py-1 rounded text-xs">Spring Boot</span>
+                            <span class="bg-pink-600 px-2 py-1 rounded text-xs">Chart.js</span>
+                            <span class="bg-teal-600 px-2 py-1 rounded text-xs">REST API</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-red-500 to-pink-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-blog text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Personal Blog Platform</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modern blogging platform with markdown support and user authentication.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 px-2 py-1 rounded text-xs">JavaEE</span>
+                            <span class="bg-blue-600 px-2 py-1 rounded text-xs">HTML/CSS</span>
+                            <span class="bg-green-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-weather-sun text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Weather App</h3>
+                        <p class="text-gray-400 mb-4">
+                            Beautiful weather application with location-based forecasts and interactive maps.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-yellow-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-blue-600 px-2 py-1 rounded text-xs">HTML/CSS</span>
+                            <span class="bg-purple-600 px-2 py-1 rounded text-xs">API Integration</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="project-card rounded-2xl p-6 card-hover">
+                        <div
+                            class="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg h-48 mb-6 flex items-center justify-center">
+                            <i class="fas fa-gamepad text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Interactive Game</h3>
+                        <p class="text-gray-400 mb-4">
+                            Fun and engaging browser-based game built with vanilla JavaScript and HTML5 Canvas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-red-600 px-2 py-1 rounded text-xs">HTML5 Canvas</span>
+                            <span class="bg-blue-600 px-2 py-1 rounded text-xs">CSS3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="fade-in">
+                <h2
+                    class="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Let's Connect
+                </h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                        <p class="text-gray-300 mb-8">
+                            I'm always open to discussing new opportunities, interesting projects,
+                            or just having a friendly chat about technology and development.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-envelope text-purple-400 text-xl"></i>
+                                <span>achinimaheshika12@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-phone text-purple-400 text-xl"></i>
+                                <span>+94 785866939</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-map-marker-alt text-purple-400 text-xl"></i>
+                                <span>Sri Lanka</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-6">
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name"
+                                class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-400 transition-colors">
+                            <input type="email" placeholder="Your Email"
+                                class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-400 transition-colors">
+                            <textarea placeholder="Your Message" rows="5"
+                                class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-400 transition-colors resize-none"></textarea>
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 Achini Subasinghe. Built with ❤️ and lots of coffee.
+            </p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Typewriter effect
+        const typewriter = document.getElementById('typewriter');
+        const text = 'Full Stack Developer';
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                typewriter.textContent = text.slice(0, i + 1);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+
+        // Start typewriter effect after a delay
+        setTimeout(type, 1000);
+
+        // Add active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-400');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-purple-400');
+                }
+            });
+        });
+
+        // Add some interactivity to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Contact form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simple form validation
+            const inputs = this.querySelectorAll('input, textarea');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                } else {
+                    input.style.borderColor = '#64748b';
+                }
+            });
+
+            if (isValid) {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-slate-800');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('p-6');
+        });
+
+    </script>
+</body
