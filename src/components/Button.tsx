@@ -8,18 +8,7 @@ interface ButtonProps {
   download?: string;
   type?: "button" | "submit";
   onClick?: () => void;
-  variant?: "primary" | "secondary" | "ghost";
-  disabled?: boolean;
 }
-
-const variantClasses = {
-  primary:
-    "border border-accent/50 bg-accent text-background hover:bg-accent-muted hover:border-accent-muted shadow-[0_0_24px_rgba(196,168,130,0.15)]",
-  secondary:
-    "border border-border-strong bg-transparent text-foreground hover:border-accent/60 hover:bg-accent-soft hover:text-accent",
-  ghost:
-    "border border-transparent bg-transparent text-muted hover:text-foreground hover:bg-surface-elevated",
-};
 
 export function Button({
   children,
@@ -28,19 +17,8 @@ export function Button({
   href,
   download,
   type = "button",
-  onClick,
-  variant = "secondary",
-  disabled = false,
 }: ButtonProps) {
-  const baseClasses = [
-    "interactive-surface inline-flex min-h-11 items-center justify-center gap-2",
-    "rounded-full px-5 py-2.5 text-sm font-medium tracking-wide sm:px-6 sm:text-base",
-    "disabled:pointer-events-none disabled:opacity-50",
-    variantClasses[variant],
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const baseClasses = `inline-block border-2 border-white rounded-full px-6 py-2 text-lg font-handwritten ${className}`;
 
   if (as === "a" && href) {
     return (
@@ -51,12 +29,7 @@ export function Button({
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={baseClasses}
-    >
+    <button type={type} className={baseClasses}>
       {children}
     </button>
   );

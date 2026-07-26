@@ -45,7 +45,7 @@ const stars: StarConfig[] = [
 export function StarBackground() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     >
       {stars.map((star, i) => (
