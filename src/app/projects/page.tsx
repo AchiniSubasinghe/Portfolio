@@ -29,22 +29,24 @@ function ProjectCard({
   return (
     <Section padded={false} className="group overflow-hidden">
       <div className="flex flex-col md:flex-row">
-        <div className="w-full min-w-0 md:w-2/5">
-          <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface-elevated sm:aspect-[4/3] md:h-full md:min-h-[220px] md:border-b-0 md:border-r lg:min-h-[240px]">
+        <div className="w-full min-w-0 md:w-2/5 lg:w-[42%]">
+          <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface-elevated sm:aspect-[4/3] md:h-full md:min-h-[220px] md:border-b-0 md:border-r lg:min-h-[260px] xl:min-h-[300px]">
             <Image
               src={image}
               alt={`${title} project screenshot`}
               width={800}
               height={600}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              sizes="(max-width: 768px) 100vw, 40vw"
+              sizes="(max-width: 768px) 100vw, 42vw"
             />
           </div>
         </div>
 
-        <div className="flex w-full min-w-0 flex-col gap-3 p-4 sm:gap-4 sm:p-6 md:w-3/5 md:p-8">
-          <h2 className="text-xl font-medium tracking-tight sm:text-2xl">{title}</h2>
-          <p className="max-w-prose text-base leading-relaxed text-muted">
+        <div className="flex w-full min-w-0 flex-col gap-3 p-4 sm:gap-4 sm:p-6 md:w-3/5 md:p-8 lg:w-[58%] lg:gap-5 xl:p-10">
+          <h2 className="text-xl font-medium tracking-tight sm:text-2xl lg:text-3xl">
+            {title}
+          </h2>
+          <p className="max-w-prose text-base leading-relaxed text-muted lg:text-lg">
             {description}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -84,7 +86,7 @@ function ProjectCard({
 export default function ProjectsPage() {
   return (
     <div>
-      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3">
+      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3 lg:mb-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Selected work
         </p>
@@ -92,7 +94,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
       </header>
-      <div className="flex flex-col gap-6 sm:gap-8">
+      <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
         {projects.map((project) => (
           <ProjectCard key={project.repoUrl} {...project} />
         ))}

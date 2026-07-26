@@ -29,7 +29,7 @@ export function TabGroup({ tabs, activeTab: controlledTab, onTabChange }: TabGro
   return (
     <div>
       <div
-        className="-mx-1 mb-6 flex gap-2 overflow-x-auto px-1 pb-1 sm:mb-8 sm:flex-wrap sm:overflow-visible"
+        className="-mx-1 mb-6 flex gap-2 overflow-x-auto px-1 pb-1 sm:mb-8 sm:flex-wrap sm:overflow-visible lg:mb-10 lg:gap-3"
         role="tablist"
         aria-label="About sections"
       >

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3">
+      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3 lg:mb-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Who I am
         </p>

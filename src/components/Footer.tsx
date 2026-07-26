@@ -4,7 +4,7 @@ import { SocialLinks } from "@/components/SocialLinks";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border pb-[env(safe-area-inset-bottom)]">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-3 py-8 sm:gap-8 sm:px-4 sm:py-10 md:flex-row md:px-6">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-3 py-8 sm:gap-8 sm:px-4 sm:py-10 md:flex-row md:px-6 lg:gap-10 lg:px-8 lg:py-12 xl:max-w-7xl xl:px-10">
         <div className="text-center md:text-left">
           <p className="font-handwritten text-xl text-foreground sm:text-2xl">
             Achini Subasinghe

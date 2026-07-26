@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div>
-      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3">
+      <header className="mb-8 space-y-2 sm:mb-10 sm:space-y-3 lg:mb-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Say hello
         </p>
@@ -21,12 +21,12 @@ export default function ContactPage() {
         </h1>
       </header>
 
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
+      <div className="flex flex-col gap-8 lg:flex-row lg:gap-10 xl:gap-12">
         <div className="w-full min-w-0 lg:w-3/5">
           <ContactForm />
         </div>
 
-        <div className="flex w-full min-w-0 flex-col gap-6 lg:w-2/5">
+        <div className="flex w-full min-w-0 flex-col gap-6 lg:w-2/5 lg:gap-8">
           <Section>
             <h2 className="mb-5 text-lg font-medium tracking-tight">Details</h2>
             <ul className="space-y-5 text-base">

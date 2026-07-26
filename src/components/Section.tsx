@@ -17,7 +17,7 @@ export function Section({
       className={[
         "rounded-xl border border-border bg-surface/80",
         "shadow-[var(--shadow-soft)] backdrop-blur-sm",
-        padded ? "p-4 sm:p-6 md:p-8" : "",
+        padded ? "p-4 sm:p-6 md:p-8 xl:p-10" : "",
         className,
       ]
         .filter(Boolean)

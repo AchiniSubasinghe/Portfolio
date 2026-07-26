@@ -11,7 +11,7 @@ export const projects: Project[] = [
   {
     title: "Canyon",
     description:
-      "A web-based platform for managing projects and tasks with natural language, streamlining workflows for submitting, reviewing, and approving academic or organizational projects. Features role-based access, status tracking, and notification support.",
+      "A project management platform provides RBAC-protected project/task/user management, with a role-aware AI chat agent at /agent that safely uses server-side, signed-in-user tool calling to perform authorized actions.",
     image: "/images/canyon.png",
     repoUrl: "https://github.com/achinisubasinghe/canyon.git",
     liveDemoUrl: "https://canyon.achini.space", 
@@ -20,16 +20,16 @@ export const projects: Project[] = [
   {
     title: "Uni Life ",
     description:
-      "A university life management platform designed to help students organize their academic schedules, track assignments, and collaborate with peers. Built with a focus on intuitive UX and real-time updates.",
-    image: "/images/uni-life.png",
+      "UniLife is a full-stack platform that connects university students with verified nearby businesses via a searchable directory, provider onboarding, admin moderation, and an AI campus guide that answers student questions.",
+    image: "/images/unilife.png",
     repoUrl: "https://github.com/achinisubasinghe/uni-life-reborn.git",
-    liveDemoUrl: "https://uni-life.achini.space",
+    liveDemoUrl: "https://unilife.achini.space",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
   },
   {
     title: "Enerlytics",
     description:
-      "An energy analytics dashboard that visualises consumption patterns, forecasts usage trends, and provides actionable insights for optimising energy efficiency in residential and commercial settings.",
+      "Enerlytics is a Next.js/MySQL/Tailwind utility management and analytics platform that offers role-based portals and workflows for admins, staff, meter readers, cashiers, managers, and customers—covering everything from onboarding and meter readings to billing, payments, analytics, and self-service support.",
     image: "/images/enerlytics.png",
     repoUrl: "https://github.com/achinisubasinghe/enerlytics.git",
     liveDemoUrl: "https://enerlytics.achini.space",

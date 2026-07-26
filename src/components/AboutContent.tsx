@@ -129,18 +129,18 @@ export function AboutContent() {
   const image = tabImages[activeTab] ?? tabImages.education;
 
   return (
-    <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:gap-10">
+    <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:gap-12 xl:gap-14">
       <div className="w-full min-w-0 lg:w-3/5">
         <TabGroup tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
-      <div className="flex w-full justify-center lg:sticky lg:top-24 lg:w-2/5 lg:self-start">
+      <div className="flex w-full justify-center lg:sticky lg:top-28 lg:w-2/5 lg:self-start">
         <div className="w-full max-w-md overflow-hidden rounded-xl border border-border shadow-[var(--shadow-soft)] lg:max-w-none">
           <Image
             src={image.src}
             alt={image.alt}
             width={image.width}
             height={image.height}
-            className="h-auto max-h-[min(50vh,420px)] w-full object-cover transition-opacity duration-300 lg:max-h-none"
+            className="h-auto max-h-[min(50vh,420px)] w-full object-cover transition-opacity duration-300 lg:max-h-[min(70vh,560px)] xl:max-h-[min(72vh,640px)]"
             sizes="(max-width: 1024px) 100vw, 40vw"
           />
         </div>

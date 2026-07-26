@@ -35,7 +35,7 @@ export function ContactForm() {
 
   if (status === "error") {
     return (
-      <div className="rounded-xl border border-border bg-surface/80 p-4 text-center shadow-[var(--shadow-soft)] sm:p-6 md:p-8">
+      <div className="rounded-xl border border-border bg-surface/80 p-4 text-center shadow-[var(--shadow-soft)] sm:p-6 md:p-8 xl:p-10">
         <p className="text-lg font-medium tracking-tight sm:text-xl">Message could not be sent</p>
         <p className="mt-2 text-base text-muted">
           Connection failed. Please try again, or email me directly.
@@ -49,7 +49,7 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-xl border border-border bg-surface/80 p-4 text-center shadow-[var(--shadow-soft)] sm:p-6 md:p-8">
+      <div className="rounded-xl border border-border bg-surface/80 p-4 text-center shadow-[var(--shadow-soft)] sm:p-6 md:p-8 xl:p-10">
         <p className="text-lg font-medium tracking-tight sm:text-xl">Message sent</p>
         <p className="mt-2 text-base text-muted">
           Thank you for reaching out. I&apos;ll get back to you soon.
@@ -66,7 +66,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-xl border border-border bg-surface/80 p-4 shadow-[var(--shadow-soft)] sm:p-6 md:p-8"
+      className="rounded-xl border border-border bg-surface/80 p-4 shadow-[var(--shadow-soft)] sm:p-6 md:p-8 xl:p-10"
       noValidate
     >
       <h2 className="mb-5 text-xl font-medium tracking-tight sm:mb-6 sm:text-2xl md:text-3xl">
