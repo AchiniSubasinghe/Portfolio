@@ -11,25 +11,30 @@ export function ContactForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("submitting");
 
-    // Simulate submission
-    setTimeout(() => {
-      try {
-        // Simulate random failure (~10% chance)
-        if (Math.random() < 0.1) {
-          throw new Error("Simulated send failure");
-        }
-        setStatus("sent");
-        setName("");
-        setEmail("");
-        setMessage("");
-      } catch {
-        setStatus("error");
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
       }
-    }, 1000);
+
+      setStatus("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "error") {
