@@ -1,3 +1,10 @@
+- this is my personal portfolio.
+- keep the codebase minimal and simple.
+- don't add any comments in the codebase.
+- always follow next.js conventions (e.g. <Image> instead of <img>).
+- always use bun.
+- never use `bun run dev` or `bun run build`, always use `bun run deploy` when verifying changes.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
